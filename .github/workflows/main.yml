@@ -35,4 +35,4 @@ jobs:
 
             # Optionally, restart your application
             # For example, if you’re using pm2:
-            node build
+            pm2 reload all
