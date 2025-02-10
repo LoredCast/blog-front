@@ -6,7 +6,7 @@
     <a href="/writing">Writing</a>
     <a href="">Art</a>
     <a href="">Knowledge</a>
-    <a href="">Articles</a>
+    <a href="/Articles">Articles</a>
     <a href="">Music</a>
 </nav>
 
@@ -38,8 +38,13 @@
     a {
         padding: 0;
         margin-bottom: 1em;
+        transition-duration: 300ms;
     }
 
+    a:hover {
+        text-decoration:underline dotted;
+        text-decoration-thickness: 0.1em;
+    }
 }
 
 

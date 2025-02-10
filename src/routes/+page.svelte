@@ -1,52 +1,28 @@
 <script>
     import Card from "$lib/Card.svelte";
+    /** @type {import('./$types').PageData} */
+    export let data;
+    
 </script>
 
 <h1>
     Home
 </h1>
 
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
+
+
+{#each data.articles as article}
+
+<Card 
+    url={article.url} 
+    title={article.title}
+    summary={article.summary}
+    date={article.date_created}
+></Card>
+  
+{/each}
 
 
 <style>
 
-
-
-    :global {
-        html {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            font-family: 'Courier New', Courier, monospace;
-            color: aliceblue;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        p {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 2;
-            word-wrap: normal;
-            text-align: justify;
-            font-size: large;
-        }
-
-        a {
-            font-style: normal;
-            font-size: large;
-            color: aliceblue;
-            text-decoration: none;
-        }
-
-
-    }
 </style>

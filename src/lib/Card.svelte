@@ -1,18 +1,26 @@
 <script>
+let {url, title, summary, date} = $props()
+
+let date_short = new Date(date)
+let now = new Date(Date.now())
+let diff = now.getTime() - date_short.getTime()
+
+date = date_short.toLocaleDateString("en-UK")
+if (diff < (1000*60*60*24)) date = `${Math.floor(diff/1000/60/60)} h ago`
+if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
 
 </script>
-
-<a href="">
+<a href="{url}">
 <div class="wrapper">
     <h1>
-        Title
+        {title}
     </h1>
     <div id="text">
         <img src="" alt="">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus minima quas nemo numquam exercitationem, non commodi facilis, quidem vitae voluptate voluptates laboriosam</p>
+        <p>{@html summary}</p>
         <div id="subtext">
             <h3 id="tag">#tag</h3>
-            <h2>01.02.2004</h2>
+            <h2>{date}</h2>
         </div>
         
     </div>
@@ -26,7 +34,7 @@
     }
 
     p {
-        line-height: 1.4;
+        line-height: 1.2;
         margin: none;
     }
 
@@ -52,9 +60,15 @@
         padding: 1.75em;
         margin-bottom: 2em;
         border-radius: 15px;
-        background-image: linear-gradient(rgb(99, 99, 47) rgb(54, 125, 94))
+        transition: 200ms;
     }
 
+    .wrapper:hover {
+        background-color: rgba(255, 255, 255, 0.032);
+        
+    }
+
+   
 
     div#text {
         display: flex;
@@ -66,6 +80,5 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
     }
 </style>
