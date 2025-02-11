@@ -1,7 +1,8 @@
 <script>
     import Card from "$lib/Card.svelte";
     /** @type {import('./$types').PageData} */
-    export let data;
+    
+    let { data } = $props();
     
 </script>
 
