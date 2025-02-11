@@ -25,14 +25,13 @@ jobs:
             cd /home/manuel/blog-front
 
             # Pull the latest commit from the main branch
-            git pull origin main
+            git pull origin master
 
-            # Install any new dependencies (use npm ci if you want a clean install)
+            # Install any new dependencies
             npm install
 
-            # Build the project (adjust this if your build command is different)
+            # Build the project
             npm run build
 
-            # Optionally, restart your application
-            # For example, if you’re using pm2:
+            # restart application
             pm2 reload all
