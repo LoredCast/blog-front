@@ -34,4 +34,4 @@ jobs:
             npm run build
 
             # restart application
-            pm2 reload all
+            pm2 reload all --update-env
