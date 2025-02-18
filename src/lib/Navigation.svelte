@@ -1,16 +1,19 @@
 <script>
 	import NavCover from "./NavCover.svelte";
-    import { navState } from "../state/navState.svelte";
-    let showNavCover = false
+    import { navState } from '$lib/state/navState'
+    let showNavCover = $state(false)
+    navState.subscribe((val) => {
+        showNavCover = val
+    })
 
     let toggleNavCover = () => {
-        navState.showCover = !navState.showCover
+        navState.update((show) => !show)
     }
 
 </script>
 
 
-{#if navState.showCover }
+{#if showNavCover }
 <NavCover toggle={toggleNavCover}></NavCover>
 {:else}
 <div id="top-row">

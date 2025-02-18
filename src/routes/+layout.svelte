@@ -3,15 +3,19 @@
     import { page, navigating } from '$app/stores';
   import { beforeNavigate, afterNavigate } from '$app/navigation';
   import { blur, fade, slide } from 'svelte/transition';
-  import { navState } from '../state/navState.svelte';
 
   import { onMount } from 'svelte';
-	import { read } from '$app/server';
+    import { navState } from '$lib/state/navState'
+    let showNavCover = $state(false)
+    navState.subscribe((val) => {
+        showNavCover = val
+    })
+
 
     let ready = $state(false);
     onMount(() => {
         ready = true
-        navState.showCover = false
+        navState.set(false)
     });
 
 
@@ -31,7 +35,7 @@
 
   afterNavigate(() => {
     // For example, if the user navigates back to the homepage:
-    navState.showCover = false
+    navState.set(false)
     ready = true
     if (isHome) {
       showBackground = true;
@@ -63,8 +67,9 @@
 :global {
 
     .background {
-        background-image: url("bg.png");
         background-attachment: fixed;
+        background-image: url("./bg.png");
+
         background-size: 1920px;
         background-position-x: center;
         opacity: 0.05;

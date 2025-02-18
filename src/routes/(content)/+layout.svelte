@@ -1,17 +1,21 @@
 <script>
 	let { children } = $props();
-    import { navState } from '../../state/navState.svelte';
     import NavCover from '$lib/NavCover.svelte';
     import Navigation from '$lib/Navigation.svelte';
 
-    let toggleNavCover = () => {
-        navState.showCover = !navState.showCover
-    }
+    import { navState } from '$lib/state/navState'
+    let showNavCover = $state(false)
+    navState.subscribe((val) => {
+        showNavCover = val
+    })
 
+    let toggleNavCover = () => {
+        navState.update((show) => !show)
+    }
 </script>
 
 
-{#if navState.showCover}
+{#if showNavCover}
 <NavCover toggle={toggleNavCover}></NavCover>
 
 {:else }
