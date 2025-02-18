@@ -68,7 +68,7 @@
 
     .background {
         background-attachment: fixed;
-        background-image: url("./bg.png");
+        background-image: url("%sveltekit.assets%/bg.png");
 
         background-size: 1920px;
         background-position-x: center;
