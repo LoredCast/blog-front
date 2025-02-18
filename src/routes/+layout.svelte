@@ -3,7 +3,7 @@
     import { page, navigating } from '$app/stores';
   import { beforeNavigate, afterNavigate } from '$app/navigation';
   import { blur, fade, slide } from 'svelte/transition';
-
+  import { assets } from '$app/paths';
   import { onMount } from 'svelte';
     import { navState } from '$lib/state/navState'
     let showNavCover = $state(false)
@@ -68,7 +68,7 @@
 
     .background {
         background-attachment: fixed;
-        background-image: url("%sveltekit.assets%/bg.png");
+        background-image: url("/bg.png");
 
         background-size: 1920px;
         background-position-x: center;
