@@ -1,50 +1,99 @@
 <script>
 	let { children } = $props();
+    import { page, navigating } from '$app/stores';
+  import { beforeNavigate, afterNavigate } from '$app/navigation';
+  import { blur, fade, slide } from 'svelte/transition';
+  import { navState } from '../state/navState.svelte';
 
-    import Navigation from '$lib/Navigation.svelte';
+  import { onMount } from 'svelte';
+	import { read } from '$app/server';
 
+    let ready = $state(false);
+    onMount(() => {
+        ready = true
+        navState.showCover = false
+    });
+
+
+  let showBackground = $state(true);
+  let isHome = $state(false)
+  $effect(() => {
+    isHome = $page.url.pathname === '/';
+  })
+
+  beforeNavigate(() => {
+    ready = false
+    if (($navigating?.from) == $navigating?.to) return;
+    if (isHome) {
+      showBackground = false;
+    }
+  });
+
+  afterNavigate(() => {
+    // For example, if the user navigates back to the homepage:
+    navState.showCover = false
+    ready = true
+    if (isHome) {
+      showBackground = true;
+    }
+  });
 </script>
 
-<div class="wrapper">
-    <div class="column-left">
-        <div class="nav-div">
-            <Navigation></Navigation>
-        </div>
-    </div>
+                <div class="background" transition:slide={{ duration: 200 }}>
+                  <!-- Your background content (e.g., color or image) -->
+                </div>
+                    {@render children()}
 
-    <div class="column-content-wrapper">
-        <div class="content-center">
-            <div class="page-content">
-                {@render children()}
-            </div>
+                {#if !ready}
+                <div id="foot">
+                    <h3>loading...</h3>
+                </div>
+                {/if}
+
     
-            
-        </div>
-        <div class="content-right">
-            <h1>Content</h1>
-            <nav class="content-nav">
-            <a href="">eins</a>
-            <a href="">zwei</a>
-            <a href="">drei</a>
-            <a href="">vier</a>
-            </nav>
-            
-
-        </div>
-    </div>
-
-</div>
 
 <style>
 
+#foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 :global {
+
+    .background {
+        background-image: url("bg.png");
+        background-attachment: fixed;
+        background-size: 1920px;
+        background-position-x: center;
+        opacity: 0.05;
+        filter: contrast(100);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+  }
         html {
+            animation: 1s ease-out 0s 1 fadein;
             margin: 0;
             padding: 0;
-            background-color: black;
             font-family: 'Courier New', Courier, monospace;
             color: aliceblue;
+            background-color: black;
+            
+            
         }
+        @keyframes fadein {
+        0% {
+          filter: opacity(100%);
+        }
+        100% {
+          filter: opacity(10%);
+        }
+    }
 
         body {
             margin: 0;
@@ -69,99 +118,16 @@
 
     }
 
+
+
+  
+
+    
+
     a:hover {
         font-weight: 600;
     }
 
-    .wrapper {
-        padding: 2em;
-    }
-
-    .column-content-wrapper {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .content-right {
-        padding-bottom: 2em;
-        border-bottom: solid rgb(51, 51, 51) 0.1em;
-        width: auto;
-    }
-
-    .content-right h1 {
-        color: rgb(85, 85, 85);
-        font-size: 2em;
-        margin-top: 1em;
-    }
-
-    .content-center {
-        margin-top: 4em;
-    }
-
-@media only screen and (min-width: 1000px) {
-
-    .wrapper {
-        padding: 0;
-    }
-
-    .content-nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content-nav a {
-        margin-bottom: 1em;
-    }
-
-    .wrapper {
-        display: flex;
-        width: 100vw;
-        justify-self: center;
-    }
-
-
-    .column-left {
-        /* background-color: red; */
-        height: 100vh;
-        display: flex;
-        margin-top: 2em;
-        margin-left: 5em;
-        position: sticky;
-        top: 2em;
-        padding-right:  3em;
-        border-right: solid rgb(7, 7, 7) 0.4em;
-
-    }
-
-    .column-content-wrapper {
-        margin-left: 2em;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        margin-top: 2em;
-        flex-direction: row;
-        
-        
-    }
-    .content-center {
-        /* background-color: blue; */
-        display: flex;
-        justify-content: center;
-        max-width: 600px;
-        margin-right: 3vw;
-        margin-top: 0;
-    }
-
-    .content-right {
-        /* background-color: aquamarine; */
-        margin-right: 2em;
-
-    }
-
-    .page-content {
-        min-width: 300px;
-    }
-}
 
     
 

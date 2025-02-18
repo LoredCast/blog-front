@@ -1,5 +1,7 @@
 <script>
-let {url, title, summary, date} = $props()
+let {url, title, summary, date, tags} = $props()
+import { fade } from 'svelte/transition';
+
 
 let date_short = new Date(date)
 let now = new Date(Date.now())
@@ -19,7 +21,12 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
         <img src="" alt="">
         <p>{@html summary}</p>
         <div id="subtext">
-            <h3 id="tag">#tag</h3>
+            <h3 id="tag">
+                
+                {#each tags as tag}
+                    #{tag}&nbsp;
+                {/each}
+            </h3>
             <h2>{date}</h2>
         </div>
         

@@ -4,10 +4,12 @@
     
     let { data } = $props();
     
+    
+
 </script>
 
 <h1>
-    Home
+    New
 </h1>
 
 
@@ -19,6 +21,7 @@
     title={article.title}
     summary={article.summary}
     date={article.date_created}
+    tags={article.tags}
 ></Card>
   
 {/each}

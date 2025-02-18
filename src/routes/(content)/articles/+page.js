@@ -1,4 +1,4 @@
-/** @type {import('./$types').PageLoad} */
+/** @type {import('../../$types').PageLoad} */
 import getDirectusInstance from '$lib/directus';
 import { readItems } from '@directus/sdk';
 export async function load({ fetch }) {
@@ -7,12 +7,10 @@ export async function load({ fetch }) {
     console.log(res)
     return {
         articles: await directus.request(readItems('articles', {
-            fields: ['url', 'title', 'date_created', { author: ['name'] }, 'summary'],
+            fields: ['url', 'title', 'date_created', { author: ['name'] }, 'summary', 'tags'],
             sort: ['-date_created'],
         })),
     };
 
     
 }
-
-
