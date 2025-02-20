@@ -1,6 +1,7 @@
 <script>
 	import NavCover from "./NavCover.svelte";
     import { navState } from '$lib/state/navState'
+	import { siteState } from "./state.svelte";
     let showNavCover = $state(false)
     navState.subscribe((val) => {
         showNavCover = val
@@ -16,8 +17,14 @@
 {#if showNavCover }
 <NavCover toggle={toggleNavCover}></NavCover>
 {:else}
+<div id="wrapper">
 <div id="top-row">
-    <h1>MANU's NOTES</h1>
+    <div>
+        <h1>MANU's NOTES
+        </h1>
+        <h2>|{siteState.heading}</h2>
+    </div>
+    
     
     <div class="burger">
         <button onclick={toggleNavCover}>
@@ -38,11 +45,23 @@
         <a href="/articles">articles</a>
         <a href="/music">music</a>
     </nav>
+
+</div>
 {/if}
 
 
 
 <style>
+    h2 {
+        font-size: 2em;
+        font-variant: small-caps;
+        font-weight: 200;
+        margin-top: -0.1em;
+        line-height: 1;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
     button {
         all: unset;
     }
@@ -50,7 +69,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
     }
     
     .burger img{
@@ -77,7 +95,14 @@
 
 
     @media only screen and (min-width: 1000px) {
+    #wrapper {
+        display: flex;
+        height: 50%;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-items: right;
 
+    }
     .burger {
         display: none;
     }
@@ -86,6 +111,9 @@
         display: flex;
         justify-content: end;
         flex-direction: column;
+    }
+    #top-row {
+        margin-bottom: 4em;
     }
 
     a {

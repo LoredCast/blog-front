@@ -2,7 +2,9 @@
 	let { children } = $props();
     import NavCover from '$lib/NavCover.svelte';
     import Navigation from '$lib/Navigation.svelte';
+    import { page } from '$app/stores';
     import { siteState } from '$lib/state.svelte';
+
     import { navState } from '$lib/state/navState'
     let showNavCover = $state(false)
     navState.subscribe((val) => {
@@ -12,6 +14,8 @@
     let toggleNavCover = () => {
         navState.update((show) => !show)
     }
+    siteState.heading = ':('
+
 </script>
 
 
@@ -29,12 +33,19 @@
     <div class="column-content-wrapper">
         <div class="content-center">
             <div class="page-content">
-                {@render children()}
+              <div>
+                <h2>Nothing here...</h2>
+              <p>Maybe something went wrong. Try another page or come back later.</p>
+              <h4>{$page.status}</h4>
+              
+              
+              </div>
             </div>
+    
             
         </div>
-        <div class="content-right" id="tags">
-            <h1>/{siteState.heading}</h1>
+        <div class="content-right">
+            <h1>TAGS</h1>
             <nav class="content-nav">
             <a href="">#eins</a>
             <a href="">#zwei</a>
@@ -51,13 +62,15 @@
 
 
 <style>
-    #tags h1 {
-        display: none;
-    }
+    p {
+    font-family: 'Courier New', Courier, monospace;
+  }
 
-    #tags a {
-        font-size: small;
-    }
+  h4 {
+    opacity: 30%;
+    font-weight: 100;
+  }
+
 
     a:hover {
         font-weight: 600;
@@ -89,19 +102,7 @@
     }
 
 @media only screen and (min-width: 1000px) {
-    #tags h1 {
-        display: contents;
-        color: aliceblue;
-        font-size: medium;
-        
-    }
 
-    :global {
-        p {
-            font-size: large;
-        }
-    }
-    
     .wrapper {
         padding: 0;
     }
@@ -118,6 +119,7 @@
     .wrapper {
         display: flex;
         width: 100vw;
+        justify-self: center;
     }
 
 
@@ -129,7 +131,7 @@
         margin-left: 5em;
         position: sticky;
         top: 2em;
-        padding-right:  8em;
+        padding-right:  3em;
         border-right: solid rgba(255, 255, 255, 0.219) 0.05em;
 
     }
@@ -156,25 +158,16 @@
     .content-right {
         /* background-color: aquamarine; */
         margin-right: 2em;
-        margin-top: 2em;
 
-    }
-    #tags a {
-        line-height: 1;
-        margin-top: 0;
-        margin-bottom: 0.5em;
-        font-size: medium;
-        color: grey;
     }
 
     .page-content {
         min-width: 300px;
-    }
-    nav {
-        margin-top: 1em;
     }
 }
 
     
 
 </style>
+
+

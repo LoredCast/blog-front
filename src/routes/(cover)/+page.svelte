@@ -21,9 +21,13 @@
 </div>
 
 <style>
-
-
-
+    #content {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: fit-content;
+    }
 
     nav {
         border: none;
@@ -54,6 +58,8 @@
         #content {
             padding-left: 2em;
         }
+
+        
     }
 
 </style>

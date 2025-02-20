@@ -1,6 +1,8 @@
 
 <script>
     import { page } from '$app/stores';
+    import { siteState } from '$lib/state.svelte';
+    siteState.heading = 'Shit'
   </script>
   <div>
   <h2>Nothing here :(</h2>

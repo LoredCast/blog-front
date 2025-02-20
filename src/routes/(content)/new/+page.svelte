@@ -3,16 +3,13 @@
     /** @type {import('./$types').PageData} */
     
     let { data } = $props();
-    
+    import { onMount } from "svelte";
+    import { siteState } from "$lib/state.svelte";
+    siteState.heading = 'new'
+
     
 
 </script>
-
-<h1>
-    New
-</h1>
-
-
 
 {#each data.articles as article}
 

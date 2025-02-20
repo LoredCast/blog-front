@@ -1,11 +1,7 @@
 <script>
     import Card from "$lib/Card.svelte";
-</script>
-<h1>Reviews</h1>
+    import { onMount } from "svelte";
+    import { siteState } from "$lib/state.svelte";
+    siteState.heading = 'reviews'
 
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
-<Card></Card>
+</script>

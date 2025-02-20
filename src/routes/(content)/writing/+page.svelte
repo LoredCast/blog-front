@@ -1,31 +1,39 @@
-<h1>Writing</h1>
+<script>
+    import Card from "$lib/Card.svelte";
+    /** @type {import('./$types').PageData} */
+	import WritingCard from '$lib/WritingCard.svelte';
+    import { siteState } from "$lib/state.svelte";
+	import { onMount } from "svelte";
+    let { data } = $props();
+    siteState.heading = 'writing'
 
-<p>
 
-    Mein Auftreten ist selbstbewusst. In schweren, gerade fallenden dunkelblauen Jeans, welche erst kurz vor den grob eleganten schwarzen Lederstiefeln haltmachen, hat jeder Schritt ein Gewicht – ich fühle ihn und genieße ihn. Er gibt mir Kraft und verleiht meiner Präsenz den nötigen Platz, den ich für mich sonst nicht einnehmen würde, ohne dass ich ihn verkünden müsste. Meine Haltung ist aufrecht, und ich achte darauf, mein Gesicht nicht fernab eines Lächelns treiben zu lassen. Die klare Statur und das knochig breite Gesicht machen mich glaubhaft ernstzunehmend, auch wenn ich mich selbst im innersten noch nicht ernst nehmen kann. Den Platz, den ich brauche, darf ich mir nehmen – langsam und vorsichtig, aber nicht zurückhaltend. Diese Erscheinung gilt es zu bewahren, aus Respekt zu mir selbst. 
-<br>
-    Meine Ziele sind in diesem Leben simpel. Meine Mutter dachte nicht im Traum an ein gutes und besonders nicht an ein so großes Leben, wie sie es am Ende umsetzen konnte, diesem Geschenk zu folgen ist das mindeste meines Beitrags. Mein Vater glaubte daran, aber zerbrach auch an demselben Leben. Zu früh und zu fatal liegt er bis heute in scharfkantigen Scherben, nicht auch mein Schicksal soll es werden, aus seinem Leid lässt sich vieles lernen. <br>
-        Eingeordnet in die Generation ist mein Leben nur eines der Linie, gab es vor mir schon meines Nachnamen Namenstragende und wird es sie noch nach mir geben. Die Art, wie mein Vorname in Erinnerung bleibt, wird durch mich geschrieben. <br>
-        Unter meinen Brüdern und meiner Schwester zähle ich, als Person und als gleichwertiges Mitglied dieser Freundschaften. Wo ich aufgehoben wurde, als ich lag, hob auch ich, als es von mir verlangt war und ich dazu in der Lage war. So werde ich auch in Zukunft verlässlich bleiben und zeigen, dass ich es bin, in dem ich da bin und zurechtkomme, wenn es darauf ankommt. Meinem kleinen Bruder zeige ich, wie aus Rückschlag und persönlichen Niederlagen weiter Fortschritt gemacht werden kann und wie es sich lohnen kann, sich selbst und seine Arbeit und sein Projekt ernstzunehmen. Dass Ideale, Werte und Symbole heutzutage noch Bedeutung haben und nicht alles in einer Einheit untergeht. 
-        Meine persönliche Verwirklichung passiert dann, wenn die Werte, die ich mir setze, auch Real werden und ich sie an mir und in der Veränderung, die ich in der Welt hervorrufe, feststellen kann. Darunter gehören die interdisziplinäre Bildung, die Liebe zum Lernen und besonders zum Erschaffen, das Wertschätzen von Kunst und Staunen über die Welt, das fühlen und die Aufmerksamkeit gegenüber den tiefsten Gefühlen, die nur spürbar sind. Habe ich Mut und keine Angst vor dem Schlechten, das mir bevorsteht, so bewege ich mich richtig. Ist mein Leben gefüllt von Erfolg und Niederschlägen, Trauer und Freude, Leid und Genuss, so mag es nicht bereut werden. 
-    <br>
-    Ich spiele Klavier, schon seit ich wirklich denken kann. Nun ist vieles nicht vorzeigbar, eine Karriere unwahrscheinlich und der Fortschritt abgeflacht, aber darf ich es niemals ganz abstoßen, da es zu mir gehört. Und immer dann, wenn ich stundenlang im Spiel verloren bin, die Zeit nur noch Wort ist und nichts mich aus dieser Konzentration bringen könnte, so fühle ich mich der Welt am nächsten. Entdecke Details, die in der Oberflächlichkeit bedeutungslos sind, aber alles verändern, blende aus, was sonst so angsteinflößend ist. 
-        Es ist nötig diesen Rhythmus beizubehalten, in engem Abstand Stücke zu lernen, niemals eine Pause zwischen einem und dem nächsten entstehen zu lassen, immer muss ein Projekt im Gange sein, zu dem mit kleinster Barriere zurückgekehrt werden kann. Nicht in Virtuosität darf verloren gegangen werden, um es dem Ego zu beweisen, das ist bereits geschehen, nun stehen Sauberkeit und Gefühl im Vordergrund. Zusätzlich zu einem Projekt gehört auch die Theorie und das Lesen über die Geschichte. Diese sind unangenehm, aber es stellt sich heraus, dass die Regelmäßigkeit notwendig ist, ihr muss entgegnet werden mit dem Willen und dem Wunsch nach der Nähe zur Welt, welche die Musik generieren kann, bringt man nur genug Konzentration und Hingabe auf. So ist die Mühseligkeit, sei es bei einem neuen Stück oder einer schwierigen Theorieaufgabe nötig dafür, damit es gut wird. 
-    <br>
-    Ich mache Sport, seit dem Winter zu meinem 15. Geburtstag ist es eine Priorität in meinem Leben. Begonnen mit der Liebe zur Einfachheit, dem reinen Körper und der Ästhetik über die Neugier darüber, was noch möglich ist bis hin zur Pflicht, aus dieses Potenzial, das jeder besitzt, nicht verloren gehen zu lassen. Es wäre verschwendet und eine gewisse Pflicht habe ich diesem Körper gegenüber, ihn gut zu behandeln. Dafür ist nichts wichtiger als keine großen Lücken entstehen zu lassen. Meine Pläne haben mich schon einmal an ein Ziel gebracht und werden es mit grundlegenden Prinzipien erneut tun. Wochenweise muss eine Steigerung erfolgen, es muss schwieriger werden, es muss sich ausreichend erholt werden und ausreichend Energie vorhanden sein. Der Rest darf sich in den Details niederschlagen.	<br>
-        Es ist keine Frage, dass sich ein Gefühl der Niederlage einstellt, wenn nicht von Fortschritt, sondern von absolutem Rückschritt gesprochen werden kann. Dennoch gilt es, nur allein den nächstgelegenen Zeitraum zu betrachten und sich an ihm (oder auch gar nicht zu messen). Für mein Training gibt es Raum für das Studio, die Calisthenics Sportart, das Seilspringen und das laufen. Diese vier können balanciert werden und ergänzen sich gut. Ich halte an den konkreten Zielen fest, darin Hybrid zu sein, mich nicht zu spezialisieren und selbst in der geringen Spezialisierung in keiner der Disziplinen mich verstecken zu müssen. Kommt der Gedanke der Niederlage und Sinnlosigkeit auf, so bin ich absolut sicher, dass es niemals die schlechte Wahl sein kann, gerade Sport zu machen, egal was dagegen sprechen mag. 
-    <br>
-    Ich lese. Zwar nicht schon immer und eigentlich bin ich gar kein geborener Leser, aber zu meinem Erwachseneneintritt begann ich zu lesen. Zu jeder Zeit habe ich ein Buch dabei und mindestens ein Projekt am laufen, dabei meistens ein deutsches Buch und ein englisches Buch, im besten Fall ein Sachbuch und eine Erzählung. Schnell kommen Gedanken des Pretentiösen auf, aber davon lasse ich mich nicht verunsichern. Nicht zur Show, sondern weil es sich gut anfühlt, die Worte und Sätze aufzunehmen lese ich Bücher, die in der Weltgeschichte bedeutung haben. Autoren wie Dostoevsky und Kafka sind mir, wie vielen anderen, Lieb, weil sie Agonie und Differenz im inneren nicht überspielen, sondern unverschönt darlegen, etwas besseres bin ich nicht, nur weil das meine Präferenz ist. 
-        Dabei gilt es stehts zu beachten, dass auch wirklich gelesen wird, die Konzentration aufgebracht wird, selbst wenn es nur ein paar Seiten am Ende des Tages sind, so sollen sie es doch jeden Tag sein. 
-        Bei Gelegenheit ist es gut, lange Auszüge vorzulesen, ohne Zuhörer, nur mir selbst. Die Sätze und zusammenhängende Gedanken entlang gehen, sie zu meinen eigenen machen und üben, wie es sich anfühlt, sie auszusprechen. So wird auch meine eigene Ausdrucksweise verbessert und ich spreche in ähnlichem Aufbau, wie ich lese.
-    <br>
-    Ich meditiere. Es ist die einzige Praxis, die ich unter keinen Umständen je aufgeben werde. Sie gleicht das ständige Stimuliert sein durch unbewertetes Nichts aus. Unaufhaltsames entgleisen der Gedanken kann damit zumindest überlebt werden. Gehirnregionen die überbeansprucht sind, bilden sich zurück. Andere, die dringend benötigt werden, aber sich zurückentwickelt haben, regenerieren sich. Zumindest jeden Tag brauche ich zehn Minuten der Achtsamkeit, besser sind fünfzehn oder eine halbe Stunde. Ich merke, wenn es ruhig wird. Die Konzentration erhöht sich, um so regelmäßiger und länger ich meditiere. 
-    <br>
-    Ich schaffe Kunst. Es ist die in mir schon am längsten lebende Leidenschaft, sie war schon einige Male kurz davor tatsächlich entwickelt und geschärft zu werden. Furcht und Unsicherheit hielten sie lange zurück und ließen sie fast völlig erlischen. Sie kommt jedoch zurück, mit der Kraft, die sie eigentlich verdient. Nun fehlen einige Jahre des Prozesses und es ist fraglich, wie viel daraus noch zu retten ist – eines steht jedoch fest: Nur durch das Erschaffen werde ich zu etwas Realem. Das ist durch die Kunst möglich. Ohne zu bewerten oder gar zu kritisieren, was auf das Blatt und die Leinen gebracht wird, ist jede neue gezogene Linie besser als die, welche nie gezogen wurde. Täglich ist eine Ausgabe von einer kleinen Skizze, einem Portrait, einer Illustration nötig, um das Auge dafür zu wahren. Platz für das erlernen formeller Fähigkeit darf ebenfalls nicht fehlen, das Augenmerk liegt doch zuletzt daran, so viel wie möglich an das Papier zu bringen, zu viel darüber nachzudenken schadet dem Zustand ungemein.
-    <br>
-    Ich schreibe. Ebenfalls noch nicht lange in meinem Reportoir an Tätigkeiten, ist es doch schon lange dem Sinn nach eine Leidenschaft. Nie lag der größte Fokus darauf, was genau geschrieben wird, schon immer war es die Ästetik der Sätze selbst, der Worte und des Geschriebenen, das mich anzieht. Geschichten konnte ich noch nie selbst fassen, fehlt es mir vielleicht an fantastischer Kreativität – interressante Perspektiven darauf werfen, was schon einmal gesagt wurde, das mag meine Qualität eher sein. Nun ist es auch hier, wie schon in den vorherigen Tätigkeiten und wie es sich mit jedem transzendenten Projekt verhält: die Immanenz erst sorgt für das Überleben. <br>
-        Keinen Autor oder überhaupt Schreiber kann ich mich nennen, steht seit Wochen kein Satz aus meiner eigenen Hand für mich und die Welt zum lesen bereit. Es erfordert radikale Akzeptenz des Geschriebenen und den Mut, sich den Fehlern und Kanten zu stellen, die aufkommen, wenn die Großartigkeit, die man sich vorstellt auch vorgelesen werden soll. Also schreibe ich, die Tagebücher, welche meine direkte Verfassung und den Wahnsinn widerspigeln und definitiv nicht für das Wiederlesen geeignet sind, die Reflexionen, die Skripte, die Gedichte, die Geschichten, die Songtexte. Sie alle tragen ihren kleinen Teil bei, aus dieser verschwommenen Einbildung etwas zu machen, das eine Form hat, eine Linie und nicht nur flüchtig betrachtet werden kann. 
-    <br>
-    Ich produziere Filme, Videos und Musik. Diese Kombination mag vielleicht am nächsten an meiner Natur sein, was auch immer das bedeuten mag. Schon mit nur ein paar Jahren, damals auf die Inspiration von Felix, meinem großen Bruder, entdecke ich das Filmemachen, das Videodrehen, das Musikproduzieren. Der wohl sinnvollste Einsatz moderner Technologie für die Kultur. Weit über ein Jahrzehnt verfolgt mich schon der stille Traum ein YouTuber zu sein, zu mancher Zeit war ich das und meine Identität war damit verbunden. Diese Zeit kann als die unbeschwerteste und rückblickend beste meines bisherigen Lebens bezeichnet werden. Nie war ich so frei und unbeeindruckt von jedem Zweifel und habe hochgeladen, veröffentlicht, geschnitten und produziert was auch immer mir in den Sinn gekommen ist. Ein gesundes Selbstbewusstsein legte die Basis dafür. <br>
-        Videos zu produzieren, heute vielleicht keine Let’s Plays, scheint irgendwo eine tiefe Stelle in meinem Gehirn zu kratzen und zu mir gehören, denn immer wieder sehe ich mich und zieht es mich dort hin zurück. Fehlte lange der Mut und besonders auch der Mut dazu, wirklich dabei zu bleiben, ist es vielleicht nötig, die Frage „Ist das überhaupt Wert gesehen zu werden? Gut genug? Unnötig?“ außer acht zu lassen und genau das zu produzieren, schreiben und zu erschaffen, was ich für wichtig erachte. Darauf ist zu vertrauen, nur dieser Intrinsischer Antrieb. So ist der Prozess schon lange klar, das Equipment bereit und der Zweifel bald besiegt. Gilt es nurnoch darauf zu vertrauen, dass es Wert ist gesehen und gehört zu werden, was Ich zu sagen, zu zeigen und zu teilen habe.    
-</p>
+    
+</script>
+<div id="header">
+</div>
+
+{#each data.writings as writing}
+
+<WritingCard
+    title={writing.Title}
+    content={writing.Content}
+    date={writing.date_created}
+    url="writing/{writing.id}"
+    tags={writing.tags}
+></WritingCard>
+ 
+{/each}
+
+<style>
+    h1 {
+        display: none;
+        font-size: 6em;
+        font-variant:small-caps;
+    }
+    #header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

@@ -2,8 +2,7 @@
 	let { children } = $props();
     import { page, navigating } from '$app/stores';
   import { beforeNavigate, afterNavigate } from '$app/navigation';
-  import { blur, fade, slide } from 'svelte/transition';
-  import { assets } from '$app/paths';
+  import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
     import { navState } from '$lib/state/navState'
     let showNavCover = $state(false)
@@ -82,23 +81,15 @@
         z-index: -1;
   }
         html {
-            animation: 1s ease-out 0s 1 fadein;
+            animation: 1s ease-out 0s 1;
             margin: 0;
             padding: 0;
             font-family: 'Courier New', Courier, monospace;
             color: aliceblue;
-            background-color: black;
+            background-color: black;    
             
-            
         }
-        @keyframes fadein {
-        0% {
-          filter: opacity(100%);
-        }
-        100% {
-          filter: opacity(10%);
-        }
-    }
+    
 
         body {
             margin: 0;
@@ -106,20 +97,25 @@
         }
 
         p {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 2;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 1.75;
             word-wrap: normal;
             text-align: justify;
-            font-size: large;
+            font-size: small;
         }
 
         a {
+            font-family: 'Courier New', Courier, monospace;
             font-style: normal;
             font-size: large;
             color: aliceblue;
             text-decoration: none;
         }
+        h1 {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-weight: 900;
 
+        }
 
     }
 

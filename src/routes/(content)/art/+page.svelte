@@ -1,6 +1,8 @@
 <script>
     import Card from "$lib/Card.svelte";
-</script>
-<h1>ART</h1>
+    import { onMount } from "svelte";
+    import { siteState } from "$lib/state.svelte";
+    siteState.heading = 'art'
 
-<Card></Card>
+</script>
+

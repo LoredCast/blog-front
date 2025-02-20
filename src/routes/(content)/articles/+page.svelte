@@ -1,12 +1,14 @@
 <script>
     import Card from "$lib/Card.svelte";
     /** @type {import('./$types').PageData} */
-    
+    import { onMount } from "svelte";
+    import { siteState } from "$lib/state.svelte";
+    siteState.heading = 'articles'
+
     let { data } = $props();
     
 </script>
 <div id="header">
-<h1>Articles</h1>
 
 </div>
 
