@@ -20,11 +20,14 @@
 
 {:else }
 <div class="wrapper">
+    {#if siteState.showNavColumn}
     <div class="column-left">
         <div class="nav-div">
             <Navigation></Navigation>
         </div>
-    </div>
+    </div>    
+    {/if}
+    
 
     <div class="column-content-wrapper">
         <div class="content-center">
@@ -33,17 +36,19 @@
             </div>
             
         </div>
+        {#if siteState.showNavColumn}
         <div class="content-right" id="tags">
-            <h1>/{siteState.heading}</h1>
-            <nav class="content-nav">
-            <a href="">#eins</a>
-            <a href="">#zwei</a>
-            <a href="">#drei</a>
-            <a href="">#vier</a>
+            {#if siteState.tags.length != 0}
+                <h1>filter</h1>
+                <nav class="content-nav">
+                    {#each siteState.tags as tag}
+                        <a href="{tag.url}">#{tag.name}</a>
+                    {/each}
             </nav>
-            
-
+            {/if}
         </div>
+        {/if}
+        
     </div>
 
 </div>
@@ -51,6 +56,9 @@
 
 
 <style>
+    #tags {
+        margin-top: 4em;
+    }
     #tags h1 {
         display: none;
     }
@@ -75,7 +83,9 @@
     .content-right {
         padding-bottom: 1em;
         border-bottom: solid rgb(51, 51, 51) 0.1em;
-        width: auto;
+        scroll-behavior: smooth;
+        overflow: scroll;
+        max-width: 100%;
     }
 
     .content-right h1 {
@@ -89,6 +99,10 @@
     }
 
 @media only screen and (min-width: 1000px) {
+    #tags {
+        border: none;
+    }
+
     #tags h1 {
         display: contents;
         color: aliceblue;
@@ -123,7 +137,7 @@
 
     .column-left {
         /* background-color: red; */
-        height: 100vh;
+        height: 90vh;
         display: flex;
         margin-top: 2em;
         margin-left: 5em;

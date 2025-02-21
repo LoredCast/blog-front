@@ -1,5 +1,7 @@
 <script>
+    import Footer from "$lib/Footer.svelte";
 
+    
 </script>
 <div class="wrapper">
 <div id="content">
@@ -17,16 +19,29 @@
     <a href="/music">music</a>
 </nav>
 </div>
+<div id="footer">
+    <Footer></Footer>
+
+</div>
 </div>
 </div>
 
 <style>
+    #footer {
+        position: sticky;
+        bottom: 0;
+        margin-bottom: 4em;
+    }
     #content {
-        height: 50vh;
+        height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: fit-content;
+    }
+
+    h1 {
+        margin-bottom: 2em;
     }
 
     nav {
@@ -35,6 +50,8 @@
         justify-content: end;
         flex-direction: column;
         z-index: 1;
+        margin-bottom: 6em;
+
     }
 
     a {

@@ -17,7 +17,7 @@
 
 <WritingCard
     title={writing.Title}
-    content={writing.Content}
+    content="{writing.Content.substring(0,700)}..."
     date={writing.date_created}
     url="writing/{writing.id}"
     tags={writing.tags}

@@ -7,9 +7,9 @@ export async function load({ fetch, params }) {
     console.log(params.slug)
 	
     return {
-        writings: await directus.request(readItems('writing', {
-			filter: { id: { _eq:  params.slug} },
-            fields: ['Title', 'Content', 'date_created', 'date_updated', 'tags', 'id','author', 'image'],
+        articles: await directus.request(readItems('articles', {
+			filter: { url: { _eq:  params.slug} },
+            fields: ['title', 'content', 'date_created', 'date_updated', 'tags', 'id','author', 'category'],
             sort: ['-date_created'],
 			
         })),

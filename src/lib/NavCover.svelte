@@ -1,10 +1,16 @@
 <script>
     let { toggle } = $props()
+    import Footer from "$lib/Footer.svelte"
+	import { siteState } from "./state.svelte";
 </script>
 <div class="wrapper">
-
+<div>
     <div id="top-row">
-    <h1>MANU's NOTES</h1>
+        <div>
+            <h1>MANU's NOTES
+            </h1>
+            <h2>|{siteState.heading}</h2>
+        </div>
 
     <div class="burger">
         <button onclick={toggle}>
@@ -27,10 +33,36 @@
 </div>
 </div>
 
+<div id="footer">
+    <Footer></Footer>
+ </div>
+</div>
+
 
 <style>
+    #footer {
+        position: sticky;
+        bottom: 0;
+        margin-bottom: 4em;
+    }
+
+    h1 {
+        user-select: none;
+        margin-bottom: 0;
 
 
+    }
+
+    h2 {
+        font-size: 2em;
+        font-variant: small-caps;
+        font-weight: 200;
+        margin-top: -0.1em;
+        line-height: 1;
+        user-select: none;
+        position: absolute;
+
+    }
 
     button {
         all: unset;
@@ -44,13 +76,17 @@
     
     .burger img{
         width: 30px;
+        
     }
     .burger {
         display: flex;
         align-items: center;
     }
     .wrapper {
-
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90vh;
         padding: 2em;
 
     }
@@ -62,6 +98,7 @@
         justify-content: end;
         flex-direction: column;
         z-index: 1;
+        margin-top: 3em;
     }
 
     a {
@@ -77,7 +114,6 @@
 
     #content {
         padding-left: 5em;
-        padding-top: 2em;
         transition-duration: 1s;
     }
 

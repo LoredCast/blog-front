@@ -65,6 +65,17 @@
 
 :global {
 
+  ::-moz-selection { /* Code for Firefox */
+  color: rgb(27, 27, 27);
+  background: rgb(185, 65, 65);
+}
+
+::selection {
+  color: rgb(20, 10, 28);
+  background: rgb(201, 147, 254);
+  
+}
+
     .background {
         background-attachment: fixed;
         background-image: url("/bg.png");

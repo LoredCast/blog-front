@@ -2,6 +2,7 @@
 	import NavCover from "./NavCover.svelte";
     import { navState } from '$lib/state/navState'
 	import { siteState } from "./state.svelte";
+    import Footer from "./Footer.svelte";
     let showNavCover = $state(false)
     navState.subscribe((val) => {
         showNavCover = val
@@ -46,21 +47,36 @@
         <a href="/music">music</a>
     </nav>
 
+    <div id="footer">
+    <Footer></Footer>
+
+    </div>
+
+
 </div>
 {/if}
 
 
 
 <style>
+    #footer {
+        display: none;
+    }
+
     h2 {
         font-size: 2em;
         font-variant: small-caps;
         font-weight: 200;
         margin-top: -0.1em;
         line-height: 1;
+        user-select: none;
+        position: absolute;
+
     }
     h1 {
         margin-bottom: 0;
+        user-select: none;
+
     }
     button {
         all: unset;
@@ -84,8 +100,8 @@
         display: none;
         flex-direction: row;
         overflow: scroll;
-        border-bottom: solid rgb(29, 29, 29) 0.2em;
         z-index: 1;
+        margin-bottom: 6em;
     }
 
     a {
@@ -95,12 +111,18 @@
 
 
     @media only screen and (min-width: 1000px) {
+
+    #footer {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        margin-bottom: 4em;
+    }
     #wrapper {
         display: flex;
-        height: 50%;
+        height: 100%;
         flex-direction: column;
         justify-content: space-between;
-        justify-items: right;
 
     }
     .burger {

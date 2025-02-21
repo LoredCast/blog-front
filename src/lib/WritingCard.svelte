@@ -37,6 +37,14 @@
     </div>
     
     <style>
+        h1 {
+            margin-bottom: 0;
+
+        }
+
+        h1:hover {
+            color: rgb(217, 237, 255);
+        }
         a {
             padding: none;
             margin: none;
@@ -66,8 +74,9 @@
             display: flex;
             flex-direction: column;
             margin-bottom: 2em;
-            margin: 2%;
+            margin: 0;
             transition: 200ms;
+            margin-bottom: 3em;
         }
         #date {
             font-size: small;

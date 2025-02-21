@@ -4,7 +4,6 @@ import { readItems } from '@directus/sdk';
 export async function load({ fetch }) {
     const directus = getDirectusInstance(fetch);
     let res = await fetch("https://directus.manuelunterriker.de/items/writing")
-    console.log(res)
     return {
         writings: await directus.request(readItems('writing', {
             fields: ['Title', 'Content', 'date_created', 'date_updated', 'tags', 'id'],

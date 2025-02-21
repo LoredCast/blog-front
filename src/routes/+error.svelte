@@ -44,17 +44,7 @@
     
             
         </div>
-        <div class="content-right">
-            <h1>TAGS</h1>
-            <nav class="content-nav">
-            <a href="">#eins</a>
-            <a href="">#zwei</a>
-            <a href="">#drei</a>
-            <a href="">#vier</a>
-            </nav>
-            
-
-        </div>
+       
     </div>
 
 </div>
@@ -62,6 +52,9 @@
 
 
 <style>
+    .page-content {
+        margin-top: 4em;
+    }
     p {
     font-family: 'Courier New', Courier, monospace;
   }
