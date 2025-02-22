@@ -1,5 +1,5 @@
 <div class="footer">
-    <a id="donate" href="https://buymeacoffee.com/manuelunterriker                ">Buy me a coffee ☕</a>
+    <a id="donate" href="https://buymeacoffee.com/manuelunterriker                ">Buy my next coffee</a>
     <a id="donate" href="https://www.paypal.com/donate/?hosted_button_id=X5XTL8PWVMJ2S">Make a Donation 🩶</a>
     <div id="infos">
         <p>manuel unterriker 2025</p>
@@ -35,5 +35,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 </style>
