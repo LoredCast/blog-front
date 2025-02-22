@@ -127,6 +127,11 @@
           font-weight: 900;
 
         }
+        h3 {
+          margin: 0;
+        }
+
+        
 
     }
 

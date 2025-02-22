@@ -14,7 +14,7 @@
 {#each data.articles as article}
 
 <Card 
-    url={article.url} 
+    url='articles/{article.url}'
     title={article.title}
     summary={article.summary}
     date={article.date_created}

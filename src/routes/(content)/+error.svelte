@@ -2,7 +2,7 @@
 <script>
     import { page } from '$app/stores';
     import { siteState } from '$lib/state.svelte';
-    siteState.heading = 'Shit'
+    siteState.heading = 'Hmm'
   </script>
   <div>
   <h2>Nothing here :(</h2>

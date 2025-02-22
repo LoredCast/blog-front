@@ -20,17 +20,16 @@
         </h1>
     </a>
 
-        <div id="text">
+        <div id="writing-text">
             <img src="" alt="">
-            <p>{@html content}</p>
             <div id="subtext">
                 <h3 id="tag">
                     
                     {#each tags as tag}
-                        #{tag}&nbsp;
+                        {tag}&nbsp;
                     {/each}
                 </h3>
-                <h2 id="date">{date}</h2>
+                <h3 id="date">{date}</h3>
             </div>
             
         </div>
@@ -38,7 +37,9 @@
     
     <style>
         h1 {
-            margin-bottom: 0;
+            margin-bottom: 0em;
+            margin-top: 0;
+            line-height: 1em;
 
         }
 
@@ -56,8 +57,10 @@
         }
     
         h3 {
-            font-weight: 900;
+            font-weight: 100;
             margin: none;
+            font-family: 'Courier New', Courier, monospace;
+            
         }
     
         h2 {
@@ -73,10 +76,12 @@
         .wrapper {
             display: flex;
             flex-direction: column;
-            margin-bottom: 2em;
             margin: 0;
             transition: 200ms;
-            margin-bottom: 3em;
+            margin-bottom: 2em;
+            min-width: 100%;
+            width: 50vw;
+
         }
         #date {
             font-size: small;
@@ -87,7 +92,7 @@
         }
        
     
-        div#text {
+        div#writing-text {
             display: flex;
             flex-direction: column;
         }
@@ -97,5 +102,14 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+        }
+        @media only screen and (min-width: 1000px) {
+            h1 {
+                margin: 0;
+            }
+
+            .wrapper {
+                margin-bottom: 1em;
+            }
         }
     </style>

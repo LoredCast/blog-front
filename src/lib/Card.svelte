@@ -27,7 +27,7 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
                     #{tag}&nbsp;
                 {/each}
             </h3>
-            <h2>{date}</h2>
+            <h3 id="date">{date}</h3>
         </div>
         
     </div>
@@ -35,25 +35,38 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
 </a>
 
 <style>
+    h1 {
+        margin-bottom: 0;
+        margin-top: 0;
+        line-height: 1em;
+    }
     a {
         padding: none;
         margin: none;
     }
 
-    p {
-        line-height: 1.2;
+    :global #text p {
+        line-height: 1.75em;
         margin: none;
+        margin-bottom: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: medium;
     }
 
     h3 {
         font-weight: 900;
         margin: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: small;
+        color: rgb(155, 155, 155);
     }
 
-    h2 {
-        font-size: 1em;
+    h3#date {
         font-weight: 100;
-        margin: none;
+        margin-bottom: none;
+        font-size: small;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 0;
     }
 
     img {
@@ -80,6 +93,7 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
     div#text {
         display: flex;
         flex-direction: column;
+        margin: 0;
     }
 
     div#subtext {
@@ -87,5 +101,7 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0;
+        padding: 0;
     }
 </style>
