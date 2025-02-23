@@ -1,6 +1,7 @@
 <script>
 	let { children } = $props();
     import NavCover from '$lib/NavCover.svelte';
+	import Navigate from '$lib/navigate.svelte';
     import Navigation from '$lib/Navigation.svelte';
     import { siteState } from '$lib/state.svelte';
     import { navState } from '$lib/state/navState'

@@ -5,6 +5,7 @@
   import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
     import { navState } from '$lib/state/navState'
+    import ViewTransition from '$lib/navigate.svelte';
     let showNavCover = $state(false)
     navState.subscribe((val) => {
         showNavCover = val
@@ -41,10 +42,12 @@
     }
   });
 </script>
+<ViewTransition></ViewTransition>
 
-                <div class="background" transition:slide={{ duration: 200 }}>
+                <div class="background">
                   <!-- Your background content (e.g., color or image) -->
                 </div>
+
                     {@render children()}
 
                 {#if !ready}
@@ -64,6 +67,15 @@
 }
 
 :global {
+
+    * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; 
+    }
+
+    *::-webkit-scrollbar {
+        display: none;
+    }
 
   ::-moz-selection { /* Code for Firefox */
   color: rgb(27, 27, 27);
@@ -92,6 +104,8 @@
         z-index: -1;
   }
         html {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none; 
             animation: 1s ease-out 0s 1;
             margin: 0;
             padding: 0;
