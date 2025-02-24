@@ -51,14 +51,35 @@
                     {@render children()}
 
                 {#if !ready}
-                <div id="foot">
+                <!-- <div id="foot">
                     <h3>loading...</h3>
-                </div>
+                </div> -->
+                <div id="loader"></div>
                 {/if}
 
     
 
 <style>
+
+@keyframes fade {
+  from {
+    background-color: rgb(166, 90, 198);
+    left: 0;
+  }
+  to {
+    background-color: rgb(159, 135, 198);
+    width: 100vw;
+  }
+}
+#loader {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 2px;
+  animation: fade 100ms;
+}
 
 #foot {
     display: flex;
