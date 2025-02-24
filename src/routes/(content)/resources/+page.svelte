@@ -2,7 +2,7 @@
     import Card from "$lib/Card.svelte";
     import { onMount } from "svelte";
     import { siteState } from "$lib/state.svelte";
-    siteState.heading = 'knowledge'
+    siteState.heading = 'resources'
 
 </script>
 

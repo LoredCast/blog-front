@@ -9,14 +9,15 @@
 
 <div class="nav-div">
     <nav>
-    <a href="/">home</a>
-    <a href="/new">new</a>
-    <a href="/reviews">reviews</a>
-    <a href="/writing">writing</a>
-    <a href="/art">art</a>
-    <a href="/knowledge">knowledge</a>
-    <a href="/articles">articles</a>
-    <a href="/music">music</a>
+        <a href="/">home</a>
+        <a href="/new">new</a>
+        <a href="/articles">articles</a>
+        <!-- <a href="/reviews">reviews</a> -->
+        <a href="/writing">writing</a>
+        <a href="/art">art</a>
+        <a href="/resources">resources</a>
+        <a href="/reflections">reflections</a>
+        <!-- <a href="/music">music</a> -->
 </nav>
 </div>
 <div id="footer">
