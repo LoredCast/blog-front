@@ -60,7 +60,7 @@
     
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @keyframes fade {
   from {
     background-color: rgb(166, 90, 198);
@@ -88,6 +88,7 @@
 }
 
 :global {
+
 
     * {
         -ms-overflow-style: none;  /* IE and Edge */
@@ -143,7 +144,7 @@
         }
 
         p {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: 'Noto Serif', serif;
             line-height: 1.75;
             word-wrap: normal;
             text-align: justify;
@@ -158,7 +159,7 @@
             text-decoration: none;
         }
         h1 {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: 'Inter', serif;
           font-weight: 900;
 
         }

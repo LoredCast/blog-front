@@ -38,10 +38,12 @@
 
 <div id="info">
 
+	<div id="tags">
 {#each content.tags as tag}
-  <p id="tags">#{tag}</p>
+  <p >#{tag} &nbsp;</p>
 {/each}
 
+</div>
 <p>This article was written by {content.author}, {convertDate(content.date_created)}.</p>
 {#if content.date_updated}
 <p>The last update was {convertDate(content.date_updated)} </p>
@@ -52,18 +54,45 @@
 </div>
 
 <style>
+	
+	
+
 	:global {
 		#article-content a {
 			color: rgb(171, 133, 232);
 
 		}
-		#article-content p, h1, h2, h3, h4{
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+		#article-content p, h1, h2, h3, h4, ol, ul {
+			font-family: 'Inter', serif;
 		}
+
+		
 
 		#article-content a:hover {
 			text-decoration: underline;
+		}
+
+		#article-content h1 {
+			padding: 1em;
+			color: black;
+			background-color: rgb(229, 229, 229);
+			margin-bottom: 3em;
+		}
+
+		#article-content h2 {
+			margin-top: 1em;
+		}
+
+		#article-content blockquote {
+			padding-left: 1em;
+			margin: 0;
+			font-weight: 600;
+			border-left: 2px solid white;
+		}
+
+		#article-content img {
+			width: 100%;
+			display: block;
 		}
 	}	
 	
@@ -104,10 +133,9 @@
 	h2 {
 		margin-bottom: 2em;
 	}
-	#info {
-	}
+
 	#info p {
-		color: rgb(86, 86, 86);
+		color: rgb(127, 127, 127);
 		line-height: 1.5em;
 		margin: 0;
 		font-family: 'Courier New', Courier, monospace;
@@ -153,6 +181,16 @@
 		margin-bottom: 1em;
 		color: aliceblue;
 	}
+	}
+
+	#tags {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 1em;
+	}
+
+	#tags p {
+		color: aliceblue;
 	}
 
 </style>
