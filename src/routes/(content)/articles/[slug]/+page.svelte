@@ -76,7 +76,8 @@
 			padding: 1em;
 			color: black;
 			background-color: rgb(229, 229, 229);
-			margin-bottom: 3em;
+			margin-bottom: 2em;
+			margin-top: 2em;
 		}
 
 		#article-content h2 {
