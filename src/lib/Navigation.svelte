@@ -23,7 +23,7 @@
     <div>
         <h1>MANU's NOTES
         </h1>
-        <h2>|{siteState.heading}</h2>
+        <h2>| {siteState.heading}</h2>
     </div>
     
     
@@ -68,7 +68,7 @@
         font-size: 2em;
         font-variant: small-caps;
         font-weight: 200;
-        margin-top: -0.1em;
+        margin-top: 0em;
         line-height: 1;
         user-select: none;
         position: absolute;

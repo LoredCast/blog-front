@@ -9,7 +9,7 @@
         <div>
             <h1>MANU's NOTES
             </h1>
-            <h2>|{siteState.heading}</h2>
+            <h2>| {siteState.heading}</h2>
         </div>
 
     <div class="burger">
@@ -58,8 +58,8 @@
         font-size: 2em;
         font-variant: small-caps;
         font-weight: 200;
-        margin-top: -0.1em;
         line-height: 1;
+        margin-top: 0;
         user-select: none;
         position: absolute;
 

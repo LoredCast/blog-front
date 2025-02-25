@@ -12,6 +12,7 @@ if (diff < (1000*60*60*24)) date = `${Math.floor(diff/1000/60/60)} h ago`
 if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
 
 </script>
+
 <a href="{url}">
 <div class="wrapper">
     <h1>
@@ -19,7 +20,7 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
     </h1>
     <div id="text">
         <img src="" alt="">
-        <p>{@html summary}</p>
+        <!-- <p>{@html summary}</p> -->
         <div id="subtext">
             <h3 id="tag">
                 
@@ -81,6 +82,7 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
         margin-bottom: 2em;
         border-radius: 15px;
         transition: 200ms;
+        margin-top: 1em;
     }
 
     .wrapper:hover {
@@ -103,5 +105,6 @@ if (diff < (1000*60*60)) date = `${Math.floor(diff/1000/60)} min ago`
         justify-content: space-between;
         margin: 0;
         padding: 0;
+        margin-top: 1em;
     }
 </style>
