@@ -78,7 +78,7 @@
             flex-direction: column;
             margin: 0;
             transition: 200ms;
-            margin-bottom: 2em;
+            margin-bottom: 0.5em;
             min-width: 100%;
             width: 50vw;
 

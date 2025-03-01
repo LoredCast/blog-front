@@ -2,6 +2,7 @@
 	let { children } = $props();
     import { page, navigating } from '$app/stores';
   import { beforeNavigate, afterNavigate } from '$app/navigation';
+  import Spinner from '$lib/spinner.svelte';
   import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
     import { navState } from '$lib/state/navState'
@@ -55,6 +56,7 @@
                     <h3>loading...</h3>
                 </div> -->
                 <div id="loader"></div>
+               
                 {/if}
 
     
@@ -71,6 +73,19 @@
     width: 100vw;
   }
 }
+#spinning {
+  background-color: rgba(0, 0, 0, 0.555);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition-duration: 1s;
+  backdrop-filter: blur(3px);
+  
+}
+
 #loader {
 
   position: fixed;
@@ -131,7 +146,7 @@
             animation: 1s ease-out 0s 1;
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Inter', serif;
             color: aliceblue;
             background-color: black;    
             
@@ -144,7 +159,7 @@
         }
 
         p {
-            font-family: 'Noto Serif', serif;
+            font-family: 'Noto', serif;
             line-height: 1.75;
             word-wrap: normal;
             text-align: justify;
@@ -152,6 +167,7 @@
         }
 
         a {
+            
             font-family: 'Courier New', Courier, monospace;
             font-style: normal;
             font-size: large;

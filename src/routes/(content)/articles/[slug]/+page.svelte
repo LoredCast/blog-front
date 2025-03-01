@@ -62,13 +62,17 @@
 			color: rgb(171, 133, 232);
 
 		}
-		#article-content p, h1, h2, h3, h4, ol, ul {
+
+		#article-content p {
+			font-family: 'Noto', serif;
+		}
+		#article-content h1, h2, h3, h4, ol, ul {
 			font-family: 'Inter', serif;
 		}
 
 		#article-content table {
 			margin-top: 1em;
-			margin-bottom: 1em;
+			margin-bottom: 2em;
 			font-family: 'Inter', serif;
 			width: 100%;
 			border-spacing: 0;
@@ -110,11 +114,15 @@
 			background-color: rgb(229, 229, 229);
 			margin-bottom: 2em;
 			margin-top: 2em;
+			text-transform: capitalize;
 		}
 
-		#article-content h2, h3 {
-			margin-top: 2em;
+		#article-content h2  {
+			margin-top: 4em;
+			padding-top: 1em;
 		}
+
+
 
 		#article-content blockquote {
 			padding-left: 1em;
@@ -230,7 +238,6 @@
 	#tags {
 		display: flex;
 		flex-direction: row;
-		margin-bottom: 1em;
 	}
 
 	#tags p {
