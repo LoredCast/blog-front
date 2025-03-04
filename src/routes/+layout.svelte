@@ -141,12 +141,12 @@
 
     .background {
         background-attachment: fixed;
-        background-image: url("/bg.png");
+        background-image: url("/blurred.png");
 
         background-size: 1920px;
         background-position-x: center;
-        opacity: 0.05;
-        filter: contrast(100);
+        /* opacity: 0.05; */
+        /* filter: contrast(1.2); */
         position: fixed;
         top: 0;
         left: 0;
