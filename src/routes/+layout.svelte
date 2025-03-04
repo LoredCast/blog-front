@@ -64,13 +64,27 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @keyframes fade {
-  from {
+  0% {
     background-color: rgb(166, 90, 198);
     left: 0;
+    width: 0;
+    margin-left: 0;
   }
-  to {
+  25% {
+    width: 100vw;
+    margin-left: 0;
+
+  }
+
+  50% {
+    margin-left: 100vw;
+    width: 100vw;
+  }
+
+  100% {
     background-color: rgb(159, 135, 198);
     width: 100vw;
+    margin-left: -100vw;
   }
 }
 #spinning {
@@ -93,7 +107,7 @@
   left: 0;
   width: 10vw;
   height: 2px;
-  animation: fade 100ms;
+  animation: fade 1000ms infinite;
 }
 
 #foot {
